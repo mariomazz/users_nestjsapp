@@ -14,4 +14,4 @@ RUN npm i
 COPY . .
 
 # Creates a "dist" folder with the production build
-RUN npm run build && docker-compose up -d --build
+RUN npm run build
