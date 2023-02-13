@@ -1,5 +1,5 @@
 # Base image
-FROM --platform=linux/amd64 node:18.12.0
+FROM node:18.12.0
 
 # Create app directory
 WORKDIR /app
@@ -8,7 +8,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install app dependencies
-RUN npm install
+RUN npm i
 
 # Bundle app source
 COPY . .
