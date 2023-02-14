@@ -1,17 +1,13 @@
-# Base image
-FROM node:18.12.0
+FROM node:18-alpine
 
-# Create app directory
 WORKDIR /app
 
-# A wildcard is used to ensure both package.json AND package-lock.json are copied
-COPY package*.json ./
+ADD package.json /app/package.json
+RUN npm config set registry http://registry.npmjs.org
+RUN npm install
 
-# Install app dependencies
-RUN npm i
+ADD . /app
 
-# Bundle app source
-COPY . .
+EXPOSE 3000
 
-# Creates a "dist" folder with the production build
-RUN npm run build
+CMD ["npm", "run", "start"]
