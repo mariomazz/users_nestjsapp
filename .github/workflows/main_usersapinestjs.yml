@@ -6,7 +6,7 @@ name: Build and deploy Node.js app to Azure Web App - usersapinestjs
 on:
   push:
     branches:
-      - main
+      - feature/dockerize_base_project
   workflow_dispatch:
 
 jobs:
