@@ -17,3 +17,6 @@ async function bootstrap() {
   await app.listen(process.env.APP_PORT);
 }
 bootstrap();
+
+// docker tag local-image:tagname new-repo:tagname
+// docker push new-repo:tagname
